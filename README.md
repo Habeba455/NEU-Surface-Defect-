@@ -31,9 +31,13 @@ This project provides both a **FastAPI backend** and a **web interface** for upl
 
 pip install -r requirements.txt
 
-<img width="1431" height="653" alt="Screenshot 2025-08-15 at 2 13 46 AM" src="https://github.com/user-attachments/assets/eeeee062-edb1-4787-9f3e-a73e836c95c6" />Run FastAPI server
+
+Run FastAPI server
+
 
 uvicorn src.api.app:app --reload
+
+<img width="1431" height="653" alt="Screenshot 2025-08-15 at 2 13 46 AM" src="https://github.com/user-attachments/assets/eeeee062-edb1-4787-9f3e-a73e836c95c6" />
 
 
 Web app: 👉 http://127.0.0.1:8000
@@ -59,6 +63,7 @@ HTML / CSS
 Docker, Kubernetes
 
 GitHub Actions (CI/CD)
+
 
 
 
