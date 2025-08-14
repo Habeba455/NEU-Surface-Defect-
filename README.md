@@ -32,7 +32,7 @@ This project provides both a **FastAPI backend** and a **web interface** for upl
 pip install -r requirements.txt
 
 
-![Uploading Screenshot 2025-08-15 at 2.13.46 AM.png…]()
+![App Screenshot](src/static/uploads/Screenshot.png)
 
 Run FastAPI server
 
@@ -62,5 +62,6 @@ HTML / CSS
 Docker, Kubernetes
 
 GitHub Actions (CI/CD)
+
 
 
