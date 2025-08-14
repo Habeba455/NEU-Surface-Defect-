@@ -1,0 +1,9 @@
+data/
+models/
+*.keras
+*.h5
+*.pth
+src/static/uploads/
+__pycache__/
+*.pyc
+.DS_Store

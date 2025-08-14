@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iron & Steel Defect Classifier</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Iron & Steel Co.</h1>
+        </div>
+        <div class="info">
+            <p>Detect and analyze industrial defects with recommended solutions</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="upload-card">
+            <h2>Upload Image</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <button type="submit">Predict Defect</button>
+            </form>
+        </div>
+
+        {% if prediction %}
+        <div class="result-card">
+            <h2>Prediction: {{ prediction }}</h2>
+            <p>Confidence: {{ confidence }}%</p>
+            <img src="{{ image_path }}" alt="Uploaded Image">
+
+            <div class="solution">
+                <h3>Recommended Solution:</h3>
+                {% if prediction == 'crazing' %}
+                <ul>
+                    <li>Reduce cooling rate</li>
+                    <li>Control mold temperature</li>
+                </ul>
+                {% elif prediction == 'inclusion' %}
+                <ul>
+                    <li>Improve steel cleanliness</li>
+                    <li>Use proper refining techniques</li>
+                </ul>
+                {% elif prediction == 'patches' %}
+                <ul>
+                    <li>Check casting parameters</li>
+                    <li>Improve surface finishing</li>
+                </ul>
+                {% elif prediction == 'pitted_surface' %}
+                <ul>
+                    <li>Reduce oxidation</li>
+                    <li>Polish surface regularly</li>
+                </ul>
+                {% elif prediction == 'rolled-in-scale' %}
+                <ul>
+                    <li>Remove scale before rolling</li>
+                    <li>Improve rolling temperature</li>
+                </ul>
+                {% elif prediction == 'scratches' %}
+                <ul>
+                    <li>Handle materials carefully</li>
+                    <li>Use protective coatings</li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</body>
+
+</html>
